@@ -1,5 +1,76 @@
 # Compiled class file
-*.class
+*.classlibro*:
+
+public class Libro {
+       private int idLibro;
+       private String titulo;
+       private String autor;
+       private int anioPublicacion;
+ public Libro(int idLibro, String titulo, String autor, int anioPublicacion) {
+           this.idLibro = idLibro;
+           this.titulo = titulo;
+           this.autor = autor;
+           this.anioPublicacion = anioPublicacion;
+       }
+
+       public String toString() {
+           return "ID: " + idLibro + ", Título: " + titulo + ", Autor: " + autor + ", Año: " + anioPublicacion;
+       }
+   }
+2. *Clase Usuario*:
+   java
+   public class Usuario {
+       private int idUsuario;
+       private String nombre;
+       private String email;
+
+       public Usuario(int idUsuario, String nombre, String email) {
+           this.idUsuario = idUsuario;
+           this.nombre = nombre;
+           this.email = email;
+       }
+
+       public String toString() {
+           return "ID: " + idUsuario + ", Nombre: " + nombre + ", Email: " + email;
+       }
+   }
+   3. *Clase Biblioteca*:
+   java
+   import java.util.ArrayList;
+
+   public class Biblioteca {
+       private ArrayList<Libro> libros; // Lista para almacenar libros
+       private ArrayList<Usuario> usuarios; // Lista para almacenar usuarios
+
+       public Biblioteca() {
+           libros = new ArrayList<>();
+           usuarios = new ArrayList<>();
+       }
+
+       // Método para agregar un libro
+       public void agregarLibro(Libro libro) {
+           libros.add(libro);
+       }
+
+       // Método para agregar un usuario
+       public void agregarUsuario(Usuario usuario) {
+           usuarios.add(usuario);
+       }
+
+       // Método para listar libros
+       public void listarLibros() {
+           for (Libro libro : libros) {
+               System.out.println(libro);
+           }
+       }
+
+       // Método para listar usuarios
+       public void listarUsuarios() {
+           for (Usuario usuario : usuarios) {
+               System.out.println(usuario);
+           }
+       }
+   }
 
 # Log file
 *.log
